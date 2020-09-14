@@ -9,19 +9,19 @@
 - `[ (f) [ (x) x x f ] [ (x) x x f ] ] (Y)`
 
 ```
-List : [ Type -- Type ]
+List : [ Type - Type ]
 List = [
   (A : Type)
   @datatype {
     null : [ A List ]
-    cons : [ A A List -- A List ]
+    cons : [ A - A List - A List ]
   }
 ]
 
 List.append : [
   @given(A : type)
-  - A List
-  - A List
+  A List -
+  A List -
   A List
 ]
 
@@ -46,11 +46,11 @@ List.append = [
 List.map : [
   @given(A: type)
   @given(B: type)
-  [ A -- B ]  A List -- B List
+  [ A - B ]  A List - B List
 ]
 
 List.map = [
-  (f: [ A -- B ])
+  (f: [ A - B ])
   (x: A List)
   x @match {
     List.null [ x ]
@@ -63,7 +63,7 @@ List.map = [
 ]
 
 List.map = [
-  (f: [ A -- B ])
+  (f: [ A - B ])
   (x: A List)
   x @match {
     List.null [ x ]
@@ -75,7 +75,7 @@ List.map = [
 ]
 
 List.map = [
-  (f: [ A -- B ])
+  (f: [ A - B ])
   (x: A List)
   x @match {
     List.null [ x ]
