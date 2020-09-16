@@ -5,7 +5,7 @@
   }
 ]
 
-@affirm  List.append [ A List - A List - A List ]
+@affirm List.append [ A List - A List - A List ]
 @define List.append [ (y) @match {
     List.null [ y ]
     List.case [ (head) (tail) y tail List.append head List.cons ]
