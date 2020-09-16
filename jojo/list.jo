@@ -1,0 +1,20 @@
+@affirm List [ Type - Type ]
+@define List [ (A) @datatype {
+    null [ A List ]
+    cons [ A - A List - A List ]
+  }
+]
+
+@affirm  List.append [ A List - A List - A List ]
+@define List.append [ (y) @match {
+    List.null [ y ]
+    List.case [ (head) (tail) y tail List.append head List.cons ]
+  }
+]
+
+@affirm List.map [ [ A - B ] - A List - B List ]
+@define List.map [ (f) (x) x @match {
+    List.null [ x ]
+    List.cons [ (head) [f] List.map head f List.cons ]
+  }
+]
