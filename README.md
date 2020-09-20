@@ -21,7 +21,7 @@
 @ty List.append [ A List - A List - A List ]
 @fn List.append [ (y) @match {
     List.null [ y ]
-    List.case [ (head) (tail) y tail List.append head List.cons ]
+    List.cons [ (head) (tail) y tail List.append head List.cons ]
   }
 ]
 
